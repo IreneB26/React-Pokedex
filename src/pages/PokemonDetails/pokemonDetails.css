@@ -45,3 +45,68 @@
     }
   }
   
+/* imagen pokemon */
+
+.img_pokemon{
+    width: 10rem;
+}
+
+
+  /* nombre del pokemon */
+
+  .name_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+/* tipos de los pokemon */
+
+.type_section{
+    margin-top: 10px;
+
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+   
+.types{
+    display: flex;
+}
+
+/* hbailidades de los pokemon */
+
+.abilities_section{
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+   
+.abilities{
+    display: flex;
+}
+
+/* stats de los pokemon */
+
+.stats_section{
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stats{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+

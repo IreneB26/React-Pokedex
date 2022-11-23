@@ -1,0 +1,19 @@
+/* button shiny */
+
+.button_shiny{
+    margin-top: 10%;
+    border: none;
+    width: 100%;
+    padding: 10%;
+    border-radius: 20px;
+    color: black;
+    background-color: red;
+    cursor: pointer;
+
+}
+
+.button_shiny:hover{
+
+    color: white;
+    background-color: black;
+}

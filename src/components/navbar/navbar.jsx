@@ -1,4 +1,5 @@
 import "./navbar.css";
+import Button from "../../pages/PokemonDetails/components/button";
 import { useState, useEffect } from "react";
 
 
@@ -18,6 +19,11 @@ export default function Navbar(props){
     },[])
 
 
+    const capitalizeFirst = str => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      };
+
+    //   const str = pokemon.name;
 
 
     return(
@@ -26,17 +32,24 @@ export default function Navbar(props){
       
             <aside className="navbar">
 
+                <h1>Pokédex</h1>
+
+
+
               <ul>
            
               {info.map((pokemon) => (
 
          
-            <li><a href={`/${pokemon.name}`}> { pokemon.name} </a> </li>
+            <li><a href={`/${pokemon.name}`}> { capitalizeFirst(pokemon.name)} </a> </li>
 
             ))}
 
 
             </ul>
+
+<Button texto="Ver más"></Button>
+
             </aside>
 
     

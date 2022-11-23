@@ -1,0 +1,21 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: red;
+}
+
+
+li{
+    list-style: none;
+}
+
+.navbar{
+    height: 100vh;
+    background-color: black;
+    color: white;
+    width: 40vw;
+    padding: 5%;
+}

@@ -45,7 +45,9 @@ export default function PokemonDetails() {
 
                 // -------------------------------------------------------------------
             })
-    }, [])
+    }, [url])
+
+    // al actualizar la url del fetch volvemos a ejecutar la llamada para actualizar el pokemon
 
 
     // poner mayuscula la primera letra
@@ -78,9 +80,12 @@ export default function PokemonDetails() {
 
             <section>
 
+                <article className="img_pokemon">
 
+                    <img className="img_pokemon" src={shiny === true ? `${imageUrlS}` : `${imageUrl}`} />
+                    
+                </article>
 
-                <img className="img_pokemon" src={shiny === true ? `${imageUrlS}` : `${imageUrl}`} />
 
                 <article className="name_section">
 
@@ -149,8 +154,8 @@ export default function PokemonDetails() {
 
 
                 <article>
-                    
-                    <Button funcion={() => setShiny(!shiny)} texto={shiny === true ? 'ver normal' : "ver shiny"}></Button>
+
+                    <Button clase="button_shiny" funcion={() => setShiny(!shiny)} texto={shiny === true ? 'ver normal' : "ver shiny"}></Button>
 
 
                 </article>

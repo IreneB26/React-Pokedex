@@ -1,0 +1,22 @@
+.search{
+    margin-top: 5%;
+}
+
+.busqueda_button{
+    border: 1px solid;
+    border-radius: 0 5px 5px 0;;
+    color: black;
+    padding: 10px;
+    font-size: 14px;
+
+
+}
+
+.search_bar{
+
+    border: 1px solid;
+    border-radius: 5px 0 0 5px;
+    color: black;
+    padding: 10px;
+
+}

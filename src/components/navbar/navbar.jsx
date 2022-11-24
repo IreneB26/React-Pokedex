@@ -1,58 +1,68 @@
 import "./navbar.css";
 import Button from "../../pages/PokemonDetails/components/button";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
-export default function Navbar(props){
+export default function Navbar(props) {
 
-    const [ info, setInfo] = useState([])
+    const [info, setInfo] = useState([])
 
-    useEffect(() =>{
-    
-        fetch("https://pokeapi.co/api/v2/pokemon")
-        .then((response)=>{
-            return response.json()
-        })
-        .then((info)=>{
-            setInfo(info.results)
-        })
-    },[])
+    const [verPokemon, setVerPokemon] = useState(20);
+
+    var Url = `https://pokeapi.co/api/v2/pokemon?limit=${verPokemon}`
+
+
+    useEffect(() => {
+
+        fetch(Url)
+            .then((response) => {
+                return response.json()
+            })
+            .then((info) => {
+                setInfo(info.results)
+            })
+    }, [Url])
+    // se actualiza cuando la Url cambia al darle a ver más pokemons
 
 
     const capitalizeFirst = str => {
         return str.charAt(0).toUpperCase() + str.slice(1);
-      };
-
-    //   const str = pokemon.name;
+    };
 
 
-    return(
+
+
+
+    return (
 
         <>
-      
+
+
             <aside className="navbar">
 
-                <h1>Pokédex</h1>
+                <Link to="/"><h1>Pokédex</h1></Link>
 
 
 
-              <ul>
-           
-              {info.map((pokemon) => (
+                <ul className="pokemon_list">
 
-         
-            <li><a href={`/${pokemon.name}`}> { capitalizeFirst(pokemon.name)} </a> </li>
-
-            ))}
+                    {info.map((pokemon) => (
 
 
-            </ul>
+                        <li><Link to={`/${pokemon.name}`}> {capitalizeFirst(pokemon.name)} </Link> </li>
 
-<Button texto="Ver más"></Button>
+                    ))}
+
+
+                </ul>
+
+                <Button clase="button_shiny" funcion={()=> setVerPokemon(verPokemon + 10)} texto="Ver más"></Button>
+
 
             </aside>
 
-    
+
         </>
 
     )

@@ -5,6 +5,7 @@ import Navbar from './components/navbar/navbar';
 import PokemonDetails from './pages/PokemonDetails/pokemonDetails';
 import Searchbar from './components/searchbar/searchbar';
 import Error404 from './pages/404/404';
+import Index from './pages/Index/index';
 
 
 
@@ -24,7 +25,7 @@ function App() {
 
           <Routes>
 
-
+          <Route path='/' element={<Index />} />
             <Route path='/:name' element={<PokemonDetails />} />
             <Route path="*" element={<Error404/>} />
 
